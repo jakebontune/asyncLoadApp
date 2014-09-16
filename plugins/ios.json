@@ -11,6 +11,10 @@
                         {
                             "xml": "<feature name=\"Console\"><param name=\"ios-package\" value=\"CDVLogger\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"ImageResizePlugin\"><param name=\"ios-package\" value=\"ImageResize\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -19,6 +23,9 @@
     },
     "installed_plugins": {
         "org.apache.cordova.console": {
+            "PACKAGE_NAME": "com.joeyvon.asyncload"
+        },
+        "com.synconset.imageResizer": {
             "PACKAGE_NAME": "com.joeyvon.asyncload"
         }
     },

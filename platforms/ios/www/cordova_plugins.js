@@ -13,12 +13,20 @@ module.exports = [
         "clobbers": [
             "cordova.logger"
         ]
+    },
+    {
+        "file": "plugins/com.synconset.imageResizer/www/imageresize.js",
+        "id": "com.synconset.imageResizer.ImageResizePlugin",
+        "clobbers": [
+            "plugins.imageResizer"
+        ]
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
-    "org.apache.cordova.console": "0.2.10"
+    "org.apache.cordova.console": "0.2.10",
+    "com.synconset.imageResizer": "0.1.1"
 }
 // BOTTOM OF METADATA
 });

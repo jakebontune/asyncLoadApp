@@ -22,6 +22,9 @@
     <feature name="Console">
         <param name="ios-package" value="CDVLogger" />
     </feature>
+    <feature name="ImageResizePlugin">
+        <param name="ios-package" value="ImageResize" />
+    </feature>
     <preference name="DisallowOverscroll" value="true" />
     <name>AsyncLoad</name>
     <description>
@@ -32,4 +35,5 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <gap:plugin name="com.synconset.imageresizer" />
 </widget>

@@ -39,6 +39,9 @@
 		7E7966E71810823500FA85AD /* icon-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966DD1810823500FA85AD /* icon-small@2x.png */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
 		5611AF73FEF140E0BB34A8EE /* CDVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C91AC38FD58F496E9B2071E0 /* CDVLogger.m */; };
+		2DDED4B79C5C4D9F8E3FF9DC /* ImageResize.m in Sources */ = {isa = PBXBuildFile; fileRef = E09786F3263F47F590061F75 /* ImageResize.m */; };
+		8F61CB72F6194013A787216C /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B9827667D845399FB054B4 /* NSData+Base64.m */; settings = {COMPILER_FLAGS = -fno-objc-arc; }; };
+		4B6C372CCBFC48F0A6CFEC60 /* UIImage+Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = 257911B1A8FB4DA9A55F90D9 /* UIImage+Scale.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +108,12 @@
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = "AsyncLoad/config.xml"; sourceTree = "<group>"; };
 		C91AC38FD58F496E9B2071E0 /* CDVLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVLogger.m"; path = "org.apache.cordova.console/CDVLogger.m"; sourceTree = "<group>"; fileEncoding = 4; };
 		DCE41525499C492DB316B613 /* CDVLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVLogger.h"; path = "org.apache.cordova.console/CDVLogger.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		E09786F3263F47F590061F75 /* ImageResize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "ImageResize.m"; path = "com.synconset.imageResizer/ImageResize.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		E6B9827667D845399FB054B4 /* NSData+Base64.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NSData+Base64.m"; path = "com.synconset.imageResizer/NSData+Base64.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		257911B1A8FB4DA9A55F90D9 /* UIImage+Scale.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Scale.m"; path = "com.synconset.imageResizer/UIImage+Scale.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		EDC07F6ECA224A47AF5A25CF /* ImageResize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ImageResize.h"; path = "com.synconset.imageResizer/ImageResize.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		59F44C53771840A58548B368 /* NSData+Base64.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSData+Base64.h"; path = "com.synconset.imageResizer/NSData+Base64.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		E74E9CAB140E4387B447AB02 /* UIImage+Scale.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIImage+Scale.h"; path = "com.synconset.imageResizer/UIImage+Scale.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +236,12 @@
 			children = (
 				C91AC38FD58F496E9B2071E0 /* CDVLogger.m */,
 				DCE41525499C492DB316B613 /* CDVLogger.h */,
+				E09786F3263F47F590061F75 /* ImageResize.m */,
+				E6B9827667D845399FB054B4 /* NSData+Base64.m */,
+				257911B1A8FB4DA9A55F90D9 /* UIImage+Scale.m */,
+				EDC07F6ECA224A47AF5A25CF /* ImageResize.h */,
+				59F44C53771840A58548B368 /* NSData+Base64.h */,
+				E74E9CAB140E4387B447AB02 /* UIImage+Scale.h */,
 			);
 			name = Plugins;
 			path = "AsyncLoad/Plugins";
@@ -422,6 +437,9 @@
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				5611AF73FEF140E0BB34A8EE /* CDVLogger.m in Sources */,
+				2DDED4B79C5C4D9F8E3FF9DC /* ImageResize.m in Sources */,
+				8F61CB72F6194013A787216C /* NSData+Base64.m in Sources */,
+				4B6C372CCBFC48F0A6CFEC60 /* UIImage+Scale.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

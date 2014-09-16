@@ -17,8 +17,14 @@ function loadImages() {
 	$.getJSON("http://54.214.19.19/include/mobile/getDiscover.php?category=curly", function(data) {
 		// console.log(data);
 		$.each(data, function (key, val) {
-			console.log(key + ": " + val)
-			$(".img" + key).attr("src", val.pic_name);
+			console.log(key + ": " + val);
+			window.imageResizer.resizeImage(
+				function (data) {
+					$(".img" + key).attr("src", val.pic_name);
+				}, function (error) {
+					console.log("Error: " + error);
+				}, ImageResizer.IMAGE_DATA_TYPE_URL, 50, 50, {resizeType:ImageResizer.RESIZE_TYPE_FACTOR ,format:'jpg'}
+			);
 		});
 	});
 }
