@@ -23,6 +23,8 @@
         <param name="ios-package" value="CDVLogger" />
     </feature>
     <preference name="DisallowOverscroll" value="true" />
+    <preference name="iosPersistentFileLocation" value="Library" />
+    <preference name="BackupWebStorage" value="none" />
     <name>AsyncLoad</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
@@ -32,4 +34,22 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <feature name="http://api.phonegap.com/1.0/file" />
+    <feature name="http://api.phonegap.com/1.0/device" />
+    <feature name="http://api.phonegap.com/1.0/network" />
+    <feature name="Device">
+        <param name="ios-package" value="CDVDevice" />
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
+    <feature name="File">
+        <param name="ios-package" value="CDVFile" />
+        <param name="android-package" value="org.apache.cordova.file.FileUtils" />
+    </feature>
+    <feature name="FileTransfer">
+        <param name="ios-package" value="CDVFileTransfer" />
+        <param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer" />
+    </feature>
+    <gap:plugin name="org.apache.cordova.file" />
+    <gap:plugin name="org.apache.cordova.device" />
+    <gap:plugin name="org.apache.cordova.file-transfer" />
 </widget>

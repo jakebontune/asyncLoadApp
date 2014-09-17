@@ -1,47 +1,68 @@
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
+
+	if (ImgCache !== null) {
+		console.log("ImgCache is DEFINED!");
+		// write log to console
+		ImgCache.options.debug = true;
+
+		// increase allocated space on Chrome to 50MB, default was 10MB
+		ImgCache.options.chromeQuota = 50*1024*1024;
+
+		ImgCache.init(function(){
+		    console.log('ImgCache init: success!');
+
+		    // from within this function you're now able to call other ImgCache methods
+		    // or you can wait for the ImgCacheReady event
+
+
+
+		}, function(){
+		    console.log('ImgCache init: error! Check the log for errors');
+		});
+	} else {
+		console.log("ImgCache is UNDEFINED!");
+	}
+
 	console.log("device is ready");
 	for (var i = 0; i <= 100; i++) {
-		$(".images-wrap").append("<div class='image'><canvas class='img" + i + "' width='50px'></canvas></div>");
+		$(".images-wrap").append("<div class='image'><img class='img" + i + "' src='http://dummyimage.com/50x50/000/fff.jpg&text=Loading' alt='' /></div>");
 	};
 
 	$(".reload").on("click", reloadPage);
 
-	loadImages();
+	// loadImages();
 	isNearBottom();
 }
 
 function loadImages() {
 	console.log("Loading images");
-	var canvas = $(".canvas");
-	var ctx = canvas.getContext("2d");
-
-	img = new Image();
-	img.onload = function () {
-
-	    canvas.height = canvas.width * (img.height / img.width);
-
-	    /// step 1
-	    var oc = document.createElement('canvas'),
-	        octx = oc.getContext('2d');
-
-	    oc.width = img.width * 0.5;
-	    oc.height = img.height * 0.5;
-	    octx.drawImage(img, 0, 0, oc.width, oc.height);
-
-	    /// step 2
-	    octx.drawImage(oc, 0, 0, oc.width * 0.5, oc.height * 0.5);
-
-	    ctx.drawImage(oc, 0, 0, oc.width * 0.5, oc.height * 0.5,
-	    0, 0, canvas.width, canvas.height);
-	}
-img.src = "http://i.imgur.com/SHo6Fub.jpg";
 	$.getJSON("http://54.214.19.19/include/mobile/getDiscover.php?category=curly", function(data) {
 		// console.log(data);
 		$.each(data, function (key, val) {
-			console.log(key + ": " + val)
-			$(".img" + key).attr("src", val.pic_name);
+			var target = $(".img" + key);
+			// console.log(key + ": " + val.pic_name);
+			target.attr("src", val.pic_name);
+
+			ImgCache.isCached(target, function(path, success){
+			  if(success){
+			    // already cached
+			    console.log("cached at " + path);
+			    ImgCache.useCachedFile(target);
+			  } else {
+			    // not there, need to cache the image
+			    console.log("not there");
+			    ImgCache.cacheFile(target.attr('src'), function(){
+			    	console.log("cacheFile");
+			    	ImgCache.useCachedFile(target, function(){
+						console.log('now using local copy');
+					}, function(){
+						console.log('could not load from cache');
+					});
+			    });
+			  }
+			});
 		});
 	});
 }
